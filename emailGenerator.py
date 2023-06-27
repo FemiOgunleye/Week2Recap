@@ -1,5 +1,5 @@
 def emailGenerator(arg1, arg2, arg3, favEmail):
-  print(arg1+arg2+arg3 +"@"+favEmail+".com")
+  print(str(arg1)+str(arg2)+str(arg3) +"@"+str(favEmail)+".com")
 
 class AdvancedPerson:
   def __init__(self, firstName, lastName, age, areaCode, city, birthYear, zipCode, favEmail):
@@ -9,9 +9,22 @@ class AdvancedPerson:
     self.areaCode = areaCode
     self.city = city
     self.birthYear = birthYear
-    self.favEmail = favEmail
     self.zipCode = zipCode
+    self.favEmail = favEmail
 
-femi = AdvancedPerson("Femi", "Oluwaleye", 31, 651, "StPaul", "1991", "11212" "gmail")
 
-emailGenerator()
+
+
+firstNameUser = input("Enter your first name: ")
+lastNameUser = input("Enter your last name: ")
+ageUser = int(input("Enter your age: "))
+areaCodeUser = int(input("Enter your area code: "))
+cityUser = input("Enter your city: ")
+birthYearUser = int(input("Enter your birth year: "))
+favEmailUser = input("Enter your favorite email company: ")
+zipCodeUser = input("Enter your zip code: ")
+
+
+user = AdvancedPerson(firstNameUser, lastNameUser, ageUser, areaCodeUser, cityUser, birthYearUser, zipCodeUser, favEmailUser)
+
+emailGenerator(user.firstName, user.city, user.birthYear, user.favEmail)
